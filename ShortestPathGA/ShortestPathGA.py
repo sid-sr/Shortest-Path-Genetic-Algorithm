@@ -2,8 +2,6 @@
 #   Genetic Algorithm for Shortest Path
 #
 
-# Work in progress -> skeletons defined
-
 from graph import Graph
 import random
 import matplotlib.pyplot as plt

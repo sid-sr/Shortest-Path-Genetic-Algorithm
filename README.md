@@ -5,7 +5,7 @@ graph problems like TSP/Dijsktra.
 
 ## Algorithms Completed/In Progress:
 ---
-- [ ] Shortest Path Simulation
+- [x] Shortest Path Simulation
 - [ ] Traveling Salesman Problem
 
 ## To do:
