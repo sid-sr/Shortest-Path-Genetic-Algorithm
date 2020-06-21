@@ -11,11 +11,12 @@ from ShortestPathGA import ShortestPathGA
 
 def main():
     g = Graph(100)
-    g.create_random_graph(0.8)
-    sp = ShortestPathGA(g, 10)
-    sp.init_population()
-    sp.set_scores()
-    print(sp.select())
+    g.create_random_graph(0.9)
+    sp = ShortestPathGA(g, 20)
+    sp.simulate(plot=True, num_iter=40,
+                num_couples=8, num_retain=3)
+    print(sp.best_route)
+    print(sp.min_dist)
 
 if __name__ == "__main__":
     main()
