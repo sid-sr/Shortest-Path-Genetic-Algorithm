@@ -1,7 +1,7 @@
 # Genetic Algorithms:
 
-Optimisation problems solved using Genetic Algorithms in Python. Will be updated with visualisation of 
-graph problems like TSP/Dijsktra. 
+Optimisation problems solved using genetic algorithms in Python. Genetic algorithms are a search heuristic based on natural evolution and natural selection. Will be updated with visualisation of 
+graph problems like TSP/Shortest Path. 
 
 ## Algorithms Completed/In Progress:
 ---

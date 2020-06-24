@@ -2,9 +2,9 @@
 #   Genetic Algorithm for Shortest Path
 #
 
-from graph import Graph
 import random
 import matplotlib.pyplot as plt
+
 
 class ShortestPathGA(object):
 
@@ -62,7 +62,12 @@ class ShortestPathGA(object):
                         if new_route[j] == node:
                             pos = j
                             break
-                    if pos != -1 and self.graph.adj[new_route[i]][new_route[pos+1]]:
+
+                    check_1 = self.graph.adj[new_route[i]][new_route[pos+1]]
+                    check_2 = self.graph.adj[new_route[pos]][new_route[i+1]]
+                    check_3 = self.graph.adj[new_route[pos-1]][new_route[i]]
+
+                    if pos != -1 and check_1 and check_2 and check_3:
                         new_route[pos], new_route[i] = new_route[i], new_route[pos]
                         break
         return new_route
@@ -111,11 +116,11 @@ class ShortestPathGA(object):
             best_score = min(self.scores)
             best_ind = self.scores.index(best_score)
             best_path = self.population[best_ind]
-            
+
             if self.min_dist > best_score:
                 self.min_dist = best_score
                 self.best_route = best_path
-                
+
             dists.append(best_score)
             for _ in range(num_couples):
                 old_r1 = self.population[self.select()]
@@ -129,7 +134,7 @@ class ShortestPathGA(object):
             new_pop.append(best_path)
             for j in range(num_retain):
                 new_pop.append(self.population[self.select()])
-            
+
             while self.pop_size - len(new_pop) > 0:
                 new_pop.append(self.create_path())
             self.population = new_pop
